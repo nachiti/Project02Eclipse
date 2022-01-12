@@ -25,19 +25,12 @@ public class CountAndOrderSymptoms implements ISymptomTreatment{
 		Map<String,Integer> mapCOuntedAndSorted = new HashMap<String, Integer>();
 		int cout=0;	
 
-//	    for (String str : listNotTreated) {
-//	      System.out.println(str);
-//	    }
-		System.out.print("cout_________________________________"+cout+"______\n");
 		for (String symptom : listNotTreated) {
 			if(mapCOuntedAndSorted.containsKey(symptom)) {
 				
 				cout = countSymptoms(symptom,listNotTreated);
-				System.out.print("cout_________________________________"+cout+"__For__\n");
 				mapCOuntedAndSorted.put(symptom, cout);
-				//System.out.print(mapCOuntedAndSorted.put(symptom, mapCOuntedAndSorted.get(symptom)+1));
 			}else {
-				//System.out.println(symptom);
 				mapCOuntedAndSorted.put(symptom, 1);
 			}
 			
@@ -45,13 +38,18 @@ public class CountAndOrderSymptoms implements ISymptomTreatment{
 		
 		return mapCOuntedAndSorted;
 	}
+	/**
+	 * 
+	 * @param symptom
+	 * @param listNotTreated
+	 * @return counter of symptoms in list
+	 */
 
 	private int countSymptoms(String symptom, List<String> listNotTreated ) {
 		int cout =0;
 		for(String sym:listNotTreated ) {
 			if(sym.equals(symptom)){
 				cout++;
-				System.out.println("cout____countSymptoms__"+cout);
 			}
 		}
 		return cout;

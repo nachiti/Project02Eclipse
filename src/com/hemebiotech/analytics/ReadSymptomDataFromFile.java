@@ -29,24 +29,18 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			try {
 				BufferedReader reader = new BufferedReader (new FileReader(filepath));
 				String line;
-				
 				while ((line=reader.readLine()) != null) {
 	
 						if(searchSymptomsInMap(line)) {
 							list_Symptoms.add(line);
-							//System.out.println("Symptom----- : "+line+ " | number------ : " + list_Symptoms.get(line));
-
-					
 						}else {
 							list_Symptoms.add(line);
 						}
 					}
-				
-
 				reader.close();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}
+				} 
 		}else {
 			System.out.println("The file does not exist.");
 		}
