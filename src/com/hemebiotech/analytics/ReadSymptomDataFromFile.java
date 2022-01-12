@@ -3,8 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Simple brute force implementation
@@ -13,7 +13,7 @@ import java.util.Map;
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
-	Map<String, Integer> list_Symptoms = new HashMap<String, Integer>();
+	List<String> list_Symptoms = new ArrayList<String>();
 	/**
 	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
@@ -23,7 +23,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 	
 	@Override
-	public Map<String, Integer> getSymptoms() {
+	public List<String> getSymptoms() {
 		
 		if (filepath != null) {
 			try {
@@ -33,10 +33,12 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				while ((line=reader.readLine()) != null) {
 	
 						if(searchSymptomsInMap(line)) {
-							list_Symptoms.put(line, list_Symptoms.get(line)+1);
+							list_Symptoms.add(line);
 							//System.out.println("Symptom----- : "+line+ " | number------ : " + list_Symptoms.get(line));
+
+					
 						}else {
-							list_Symptoms.put(line, 1);
+							list_Symptoms.add(line);
 						}
 					}
 				
@@ -53,8 +55,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 	
 	private boolean searchSymptomsInMap(String line) {
-		return list_Symptoms.containsKey(line)?true:false;
+		return list_Symptoms.contains(line)?true:false;
 	
 	}
+
 
 }
