@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
@@ -12,8 +13,7 @@ import java.util.stream.Collectors;
  * @author user
  *
  * implémentation de ISymptomTreatment qui :
- * 		- trie et 
- * 		- count dans une map(treemap) les symtpoms
+ * 		- counter dans une map les symtpoms
  */
 public class CountAndOrderSymptoms implements ISymptomTreatment{
 
@@ -35,7 +35,9 @@ public class CountAndOrderSymptoms implements ISymptomTreatment{
 			}
 			
 		}
-		
+//		mapCOuntedAndSorted = mapCOuntedAndSorted.entrySet().stream()
+//								.sorted(Map.Entry.comparingByKey())
+//								.collect((Supplier<R>) Collectors.toMap(Map.Entry::getKey, null), null, null)
 		return mapCOuntedAndSorted;
 	}
 	/**

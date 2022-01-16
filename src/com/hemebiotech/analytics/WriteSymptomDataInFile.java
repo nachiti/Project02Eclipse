@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Simple brute force implementation
+ *  Ecriture dans file
  *
  */
 
@@ -17,6 +17,7 @@ public class WriteSymptomDataInFile implements ISymptomWrite {
 	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 * @throws IOException 
+	 * 
 	 */
 	@Override
 	public void writeSymptoms(Map<String, Integer> map) throws IOException {

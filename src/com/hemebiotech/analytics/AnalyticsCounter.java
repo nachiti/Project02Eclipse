@@ -2,7 +2,11 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 
+ * @author faical
+ *	main du programme
+ */
 public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {

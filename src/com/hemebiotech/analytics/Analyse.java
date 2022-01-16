@@ -3,14 +3,23 @@ package com.hemebiotech.analytics;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 
+ * @author faical
+ * les interfaces et leur implémentations et leuer instanciations
+ */
 public class Analyse {
 	
 	private ISymptomReader reader;
 	private ISymptomTreatment treatment;
 	private ISymptomWrite writer;
 	
-	//contructeur
+	/**
+	 * Contructeur
+	 * @param readerFromMain
+	 * @param treatmentFromMain
+	 * @param writerFromMain
+	 */
 	public Analyse (ISymptomReader readerFromMain, ISymptomTreatment treatmentFromMain, ISymptomWrite writerFromMain) {
 	this.reader = readerFromMain;
 	this.writer = writerFromMain;
